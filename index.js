@@ -4,8 +4,8 @@ const computerSelection = function getComputerChoice() {
   return hands[randomNum];
 };
 
-// console.log(getComputerChoice());
-let playerHand = "scissors";
+let playerHand = prompt("Please choose , Rock, Paper or Scissors !");
+console.log(playerHand);
 
 const playerSelection = function getPlayerSelection() {
   let playerInput = playerHand.toLowerCase();
@@ -65,3 +65,5 @@ function game() {
 }
 
 console.log(game());
+
+// use propmpt to get user input
