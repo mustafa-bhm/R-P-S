@@ -5,3 +5,10 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice());
+
+function playerSelection(input) {
+  let playerInput = input.toLowerCase();
+  return playerInput;
+}
+
+console.log(playerSelection("scissors"));
