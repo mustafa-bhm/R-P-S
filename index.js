@@ -4,8 +4,16 @@ const computerSelection = function getComputerChoice() {
   return hands[randomNum];
 };
 
-let playerHand = prompt("Please choose , Rock, Paper or Scissors !");
-console.log(playerHand);
+let playerHand = document.querySelectorAll(".playBtn");
+
+playerHand.forEach((button) => {
+  button.addEventListener("click", () => {
+    console.log(button.value);
+  });
+});
+
+let result = document.getElementsByClassName(".result");
+result;
 
 const playerSelection = function getPlayerSelection() {
   let playerInput = playerHand.toLowerCase();
@@ -39,31 +47,31 @@ function playRound() {
 
 // console.log(playRound());
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-  let winner = "";
+// function game() {
+//   let playerScore = 0;
+//   let computerScore = 0;
+//   let winner = "";
 
-  for (let i = 0; i < 5; i++) {
-    playRound();
-    if (playRound().includes("Win")) {
-      playerScore++;
-    } else if (playRound().includes("Lose")) {
-      computerScore++;
-    }
-  }
-  console.log("computerScore", computerScore, "playerScore", playerScore);
+//   for (let i = 0; i < 5; i++) {
+//     playRound();
+//     if (playRound().includes("Win")) {
+//       playerScore++;
+//     } else if (playRound().includes("Lose")) {
+//       computerScore++;
+//     }
+//   }
+//   console.log("computerScore", computerScore, "playerScore", playerScore);
 
-  if (playerScore > computerScore) {
-    winner = "You won !";
-  } else if (playerScore < computerScore) {
-    winner = "You Lost !";
-  } else if (playerScore === computerScore) {
-    winner = "its a tie!";
-  }
-  return winner;
-}
+//   if (playerScore > computerScore) {
+//     winner = "You won !";
+//   } else if (playerScore < computerScore) {
+//     winner = "You Lost !";
+//   } else if (playerScore === computerScore) {
+//     winner = "its a tie!";
+//   }
+//   return winner;
+// }
 
-console.log(game());
+// console.log(game());
 
 // use propmpt to get user input
