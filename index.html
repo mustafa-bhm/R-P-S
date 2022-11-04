@@ -4,20 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&family=Open+Sans:wght@400;700&family=Public+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Document</title>
   </head>
   <body>
     <h1>Rock Paper Scissors !</h1>
     <div class="score">
-      Player <span class="playerScore"></span> -
-      <span class="computerScore"></span> Computer
+      Player <span class="playerScore">0</span> -
+      <span class="computerScore">0</span> Machine
     </div>
     <div class="selection">
-      <span class="pSelection"></span> VS <span class="cSelection"></span>
+      <span class="pSelection"></span> VS
+      <span class="cSelection"></span>
     </div>
 
-    <h3>Choose your Hand !</h3>
+    <h3>Choose your weapon !</h3>
     <div class="rps-selection">
       <button class="playBtn" value="rock">Rock</button>
       <button class="playBtn" value="paper">Paper</button>
@@ -25,7 +32,7 @@
     </div>
 
     <div class="message"></div>
-    <div class="result">Results</div>
+    <div class="result"></div>
   </body>
   <script src="/index.js"></script>
 </html>

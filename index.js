@@ -1,25 +1,24 @@
 /// random selection for the computer
-const computerSelection = function getComputerChoice() {
+function computerPlay() {
   let hands = ["rock", "paper", "scissors"];
   let randomNum = Math.floor(Math.random() * 3);
   return hands[randomNum];
-};
+}
 
 let playerScore = 0;
 let computerScore = 0;
 let rounds = 0;
 
-const message = document.getElementsByClassName("message");
-const pSelection = document.getElementsByClassName("pSelection");
-const cSelection = document.getElementsByClassName("cSelection");
-const playerScoreElemnt = document.getElementsByClassName("playerScore");
-const computerScoreElemnt = document.getElementsByClassName("computerScore");
-const finalResult = document.getElementsByClassName("result");
+const message = document.getElementsByClassName("message")[0];
 
-function playRound() {
-  let computer = computerSelection;
-  let player = playerSelection;
-  let result = ``;
+const pSelection = document.getElementsByClassName("pSelection")[0];
+const cSelection = document.getElementsByClassName("cSelection")[0];
+const playerScoreElemnt = document.getElementsByClassName("playerScore")[0];
+const computerScoreElemnt = document.getElementsByClassName("computerScore")[0];
+const finalResult = document.getElementsByClassName("result")[0];
+const options = document.querySelectorAll(".playBtn");
+
+function playRound(player, computer) {
   if (computer === player) {
     message.textContent = "its a tie !";
   } else if (computer === "rock" && player === "paper") {
@@ -41,8 +40,6 @@ function playRound() {
     message.textContent = `You Lose, Scissors beates Paper `;
     computerScore++;
   }
-  // console.log("c", computer, "p", player);
-  return result;
 }
 
 // to update score
@@ -59,60 +56,35 @@ function updateScore(playerSelection, computerSelection) {
 function checkWinner() {
   if (rounds === 5) {
     if (computerScore === playerScore) {
-      finalResult.textContent = "It's a tie :P";
+      finalResult.textContent = "Game Over :It's a tie :P";
     } else if (computerScore > playerScore) {
-      finalResult.textContent = "You lost the Game !";
+      finalResult.textContent = "Game Over :You lost the Game !";
     } else {
-      finalResult.textContent = "You are the winner !!! !";
+      finalResult.textContent = "Game Over : You are the winner 🎉 🎉 🎉 !!! ";
     }
+    return true;
   }
+  return false;
 }
 
-let playerHand = document.querySelectorAll(".playBtn");
+/// Playing 5 rounds
 
-playerHand.forEach((button) => {
-  button.addEventListener("click", () => {
-    console.log(button.value);
-  });
-});
+function game() {
+  options.forEach((option) =>
+    option.addEventListener("click", () => {
+      const computerSelection = computerPlay();
+      const playerSelection = option.value;
 
-let result = document.getElementsByClassName(".result");
-result;
+      finalResult.textContent = "";
+      playRound(playerSelection, computerSelection);
+      updateScore(playerSelection, computerSelection);
+      rounds++;
+      if (checkWinner()) {
+        rounds = computerScore = playerScore = 0;
+        updateScore(playerSelection, computerSelection);
+      }
+    })
+  );
+}
 
-const playerSelection = function getPlayerSelection() {
-  let playerInput = playerHand.toLowerCase();
-  return playerInput;
-};
-
-// console.log(playerSelection("scissors"));
-
-// console.log(playRound());
-
-// function game() {
-//   let playerScore = 0;
-//   let computerScore = 0;
-//   let winner = "";
-
-//   for (let i = 0; i < 5; i++) {
-//     playRound();
-//     if (playRound().includes("Win")) {
-//       playerScore++;
-//     } else if (playRound().includes("Lose")) {
-//       computerScore++;
-//     }
-//   }
-//   console.log("computerScore", computerScore, "playerScore", playerScore);
-
-//   if (playerScore > computerScore) {
-//     winner = "You won !";
-//   } else if (playerScore < computerScore) {
-//     winner = "You Lost !";
-//   } else if (playerScore === computerScore) {
-//     winner = "its a tie!";
-//   }
-//   return winner;
-// }
-
-// console.log(game());
-
-// use propmpt to get user input
+game();
