@@ -13,17 +13,37 @@ body {
   );
   color: white;
   font-family: "Londrina Solid", sans-serif;
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 6rem;
-  gap: 1rem;
+  margin-top: 5rem;
+  gap: 2rem;
   letter-spacing: 0.09rem;
 }
 
 button {
   cursor: pointer;
+  font-size: 4rem;
+  margin-left: 1rem;
+  color: rgb(79, 90, 194);
+  background-color: beige;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 9px #999;
+}
+button:hover {
+  transform: scale(1.1);
+}
+button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+i {
+  display: inline-block;
+  padding: 0.5em 0.6em;
 }
 
 .score {
@@ -32,4 +52,33 @@ button {
   color: black;
   padding: 1rem;
   border-radius: 4px;
+}
+p {
+  font-size: 1rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(3, 3, 129, 1) 35%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    color: white;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.2rem;
+    gap: 1rem;
+    margin-top: 5rem;
+    letter-spacing: 0.07rem;
+  }
+  button {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  p {
+    margin-top: 8rem;
+    text-align: center;
+  }
 }

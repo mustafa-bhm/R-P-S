@@ -56,9 +56,9 @@ function updateScore(playerSelection, computerSelection) {
 function checkWinner() {
   if (rounds === 5) {
     if (computerScore === playerScore) {
-      finalResult.textContent = "Game Over :It's a tie :P";
+      finalResult.textContent = "Game Over :It's a tie 😑";
     } else if (computerScore > playerScore) {
-      finalResult.textContent = "Game Over :You lost the Game !";
+      finalResult.textContent = "Game Over :You lost the Game 😜!";
     } else {
       finalResult.textContent = "Game Over : You are the winner 🎉 🎉 🎉 !!! ";
     }

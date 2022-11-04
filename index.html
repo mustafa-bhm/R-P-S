@@ -10,7 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&family=Open+Sans:wght@400;700&family=Public+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="./styles.css" />
+
     <title>Document</title>
   </head>
   <body>
@@ -26,13 +31,23 @@
 
     <h3>Choose your weapon !</h3>
     <div class="rps-selection">
-      <button class="playBtn" value="rock">Rock</button>
-      <button class="playBtn" value="paper">Paper</button>
-      <button class="playBtn" value="scissors">Scissors</button>
+      <button class="playBtn" value="rock">
+        <i class="fa-regular fa-hand-back-fist"></i>
+      </button>
+      <button class="playBtn" value="paper">
+        <i class="fa-regular fa-hand"></i>
+      </button>
+      <button class="playBtn" value="scissors">
+        <i class="fa-regular fa-hand-scissors"></i>
+      </button>
     </div>
 
     <div class="message"></div>
     <div class="result"></div>
+    <p>
+      Rules : The game consists of 5 rounds, the player with the higher score is
+      the Winner
+    </p>
   </body>
   <script src="/index.js"></script>
 </html>
